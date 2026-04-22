@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثانوية الإمام مالك - العين الصفراء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #007bff;
+            --bg-light: #fdfaf5;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: var(--bg-light); 
+            color: #333; 
+            line-height: 1.8;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkZWRlZGUiIGZpbGwtb3BhY2l0eT0iMC41Ij48cGF0aCBkPSJNMCAwaDR2NGgwSDB6bTRoNHY0SDR6bTggOGg0djRIMjh6bTQgNGg0djRJMTJ6bTggOGg0djRJMTZ6bTQgNGg0djRJMjB6bTQgNGg0djRJMjR6bTggOGg0djRIMjh6bTQgNGg0djRJMzJ6bTggOGg0djRJMzZ6Ii8+PC9nPjwvZz48L3N2Zz4=');
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header { background: rgba(255, 255, 255, 0.98); padding: 12px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: var(--secondary); font-weight: 900; font-size: 1.6rem; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { text-decoration: none; color: var(--primary); font-weight: bold; transition: 0.3s; }
+        nav ul li a:hover { color: var(--secondary); }
+
+        /* الهيرو والباكقراوند am.jpg */
+        .hero { 
+            height: 85vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('ام.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            display: flex; align-items: center; justify-content: center; color: white; text-align: center; margin-top: 60px;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; }
+        .hero p { font-size: 1.4rem; margin-top: 10px; background: rgba(0, 123, 255, 0.8); display: inline-block; padding: 5px 25px; border-radius: 50px; }
+
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.3rem; color: var(--primary); position: relative; }
+        .section-title::after { content: ''; width: 70px; height: 5px; background: var(--secondary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        .flex-box { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .text-side { flex: 1.2; min-width: 300px; }
+        .img-side { flex: 1; min-width: 300px; text-align: center; }
+        .img-side img { width: 100%; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        /* ستايل مخصص للطاقم */
+        .staff-group { display: flex; flex-direction: column; gap: 20px; }
+        .jalloul-thumb { width: 150px; height: 150px; border-radius: 50%; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: -75px auto 0; position: relative; z-index: 2; object-fit: cover; }
+
+        /* ستايل التكريم والتحفيز */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-body h3 { color: var(--secondary); margin-bottom: 10px; }
+
+        footer { background: var(--primary); color: white; padding: 50px 0 20px; text-align: center; }
+        .social-link { background: var(--secondary); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 15px; font-weight: bold; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } nav ul { display: none; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">ثانوية الإمام مالك</a>
+                <ul>
+                    <li><a href="#about">تعريف بالمؤسسة</a></li>
+                    <li><a href="#staff">الطاقم الإداري والتربوي</a></li>
+                    <li><a href="#honors">التكريم والتحفيز</a></li>
+                    <li><a href="#activities">الأنشطة المدرسية</a></li>
+                    <li><a href="#director">كلمة المدير</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>ثانوية الإمام مالك</h1>
+            <p>منارة العلم في العين الصفراء</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">تعريف بالمؤسسة</h2>
+            <div class="flex-box">
+                <div class="text-side">
+                    <h3>صرح تعليمي عريق</h3>
+                    <p>تعتبر ثانوية الإمام مالك ببلدية العين الصفراء، ولاية النعامة، واحدة من أهم المؤسسات التربوية التي تخرج منها أجيال من الإطارات والكفاءات. نهدف دائماً إلى تقديم تعليم ذو جودة عالية في بيئة تربوية مثالية تساعد التلاميذ على الإبداع والتفوق الدراسي.</p>
+                </div>
+                <div class="img-side">
+                    <img src="ام.jpg" alt="واجهة الثانوية">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">الطاقم الإداري والتربوي</h2>
+            <div class="flex-box">
+                <div class="img-side staff-group">
+                    <img src="اسا.jpg" alt="الطاقم التربوي">
+                    <img src="جلول.jpg" alt="الأستاذ جلول" class="jalloul-thumb">
+                </div>
+                <div class="text-side">
+                    <h3>نخبة من خيرة الإطارات</h3>
+                    <p>يضم **الطاقم الإداري والتربوي** لثانوية الإمام مالك نخبة من الأساتذة والمشرفين الأكفاء الذين يسخرون خبراتهم الطويلة لمرافقة التلاميذ. يتميز طاقمنا بالتفاني في العمل، والحرص على تطبيق أحدث المناهج التربوية لضمان نجاح أبنائنا.</p>
+                    <p>يعمل الفريق بروح الأسرة الواحدة، حيث يتم التنسيق المستمر بين الإدارة والمدرسين لتذليل كافة الصعاب وتوفير المناخ المناسب للتحصيل العلمي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="honors">
+        <div class="container">
+            <h2 class="section-title">التكريم والتحفيز المستمر</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="تك.jpg" alt="حفل تكريم">
+                    <div class="card-body">
+                        <h3>تكريم المتفوقين</h3>
+                        <p>نحرص على مكافأة تلاميذنا النجباء في كل مناسبة لتعزيز روح المنافسة الشريفة والاجتهاد.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="تحفيز.jpg" alt="نشاط تحفيزي">
+                    <div class="card-body">
+                        <h3>جلسات التحفيز</h3>
+                        <p>ننظم لقاءات دورية تهدف إلى رفع معنويات التلاميذ وتوجيههم نحو الطرق الأفضل للمذاكرة والنجاح.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">الأنشطة والمحيط المدرسي</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="520253704_1172936461518437_8678638710224892860_n.jpg" alt="رياضة">
+                    <div class="card-body">
+                        <h3>الروح الرياضية</h3>
+                        <p>دعم المواهب الرياضية وتوفير المساحات اللازمة لممارسة الأنشطة البدنية.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="672681278_1396717235807024_6115325854735880940_n.jpg" alt="البيئة">
+                    <div class="card-body">
+                        <h3>بيئة خضراء وجميلة</h3>
+                        <p>الاعتناء بمحيط المؤسسة لتوفير راحة نفسية للأساتذة والتلاميذ على حد سواء.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="director">
+        <div class="container">
+            <h2 class="section-title">كلمة السيد المدير</h2>
+            <div class="flex-box">
+                <div class="img-side">
+                    <img src="607514727_1308014394677309_8409783753447984181_n.jpg" alt="المدير فرحان الشيخ">
+                </div>
+                <div class="text-side">
+                    <h3>الأستاذ فرحان الشيخ</h3>
+                    <p style="font-style: italic; font-size: 1.2rem; border-right: 4px solid var(--secondary); padding-right: 20px;">
+                        "رسالتنا في ثانوية الإمام مالك هي بناء جيل مثقف وواعٍ. نحن هنا لخدمة التلاميذ وتوفير كل سبل النجاح لهم. أبوابنا مفتوحة دائماً لكل ما يخدم مصلحة التعليم في منطقتنا الغالية."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>📍 العنوان: العين الصفراء، ولاية النعامة</p>
+            <p>📞 الهاتف: 049 56 71 95</p>
+            <a href="https://www.facebook.com/imamemalek1" target="_blank" class="social-link">تابعنا على فيسبوك 👍</a>
+            <p style="margin-top: 20px; opacity: 0.6;">© 2026 جميع الحقوق محفوظة لثانوية الإمام مالك</p>
+        </div>
+    </footer>
+
+</body>
+</html>
